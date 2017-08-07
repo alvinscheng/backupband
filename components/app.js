@@ -6,11 +6,12 @@ export default class App extends React.Component {
     this.state = {}
   }
   componentDidMount() {
-    console.log('Your App component mounted, homey')
+    console.log('Component mounted.')
   }
   render() {
     return (
       <div>
+        <h1>Play the Drums!</h1>
         <h3>F = Kick Drum</h3>
         <h3>J = Snare Drum</h3>
         <h3>E = Hi Hat (closed)</h3>
