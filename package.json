@@ -1,0 +1,42 @@
+{
+  "name": "backupband",
+  "version": "1.0.0",
+  "description": "A web app for JS developers want to save notes about what they've learned.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle": "browserify client/index.js -o client/main.js -t babelify",
+    "watchbundle": "watchify client/index.js -o client/main.js -t babelify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnhaup/backupband"
+  },
+  "keywords": [],
+  "author": "John Haupenthal",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "eslint": "4.3.0",
+    "eslint-config-standard": "10.2.1",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-node": "5.1.1",
+    "eslint-plugin-promise": "3.5.0",
+    "eslint-plugin-react": "7.1.0",
+    "eslint-plugin-standard": "3.0.1",
+    "htmlhint": "0.9.13",
+    "express": "^4.15.3",
+    "knex": "^0.13.0",
+    "path": "^0.12.7",
+    "pg": "^7.0.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}
