@@ -1,6 +1,7 @@
 import React from 'react'
 import playDrums from '../drums/drum-machine.js'
-import { metronome, sched, ticktack } from '../metronome.js'
+import { metronome, sched } from '../metronome.js'
+import RenderBand from './band.js'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -13,10 +14,11 @@ export default class App extends React.Component {
     })
     document.addEventListener('visibilitychange', () => {
       if (document.visibilityState === 'visible') {
-        sched.aheadTime = 0.1;
-      } else {
-        sched.aheadTime = 1.0;
-        sched.process();
+        sched.aheadTime = 0.1
+      }
+      else {
+        sched.aheadTime = 1.0
+        sched.process()
       }
     })
   }
@@ -30,14 +32,10 @@ export default class App extends React.Component {
     return (
       <div>
         <h1>Play the Drums!</h1>
-        <h3>F = Kick Drum</h3>
-        <h3>J = Snare Drum</h3>
-        <h3>E = Hi Hat (closed)</h3>
-        <h3>W = Cymbal</h3>
-        <h3>I = Hi Tom</h3>
-        <h3>O = Kick Drum</h3>
+        <h3>F = Kick Drum | J = Snare Drum | E = Hi Hat (closed) | W = Cymbal | I = Hi Tom | O = Kick Drum</h3>
         <h3 onClick={this.startMetro}>START METRONOME</h3>
         <h3 onClick={this.stopMetro}>STOP THE BEEPING!!!</h3>
+        <RenderBand />
       </div>
     )
   }

@@ -20,6 +20,8 @@
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
+    "stylelint": "^8.0.0",
+    "stylelint-config-standard": "^17.0.0",
     "watchify": "^3.9.0"
   },
   "dependencies": {
