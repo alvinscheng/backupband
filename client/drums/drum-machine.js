@@ -1,32 +1,32 @@
 const { Howl } = require('howler')
 
 var kick = new Howl({
-  src: ['./sound-files/kick.wav'],
+  src: ['./drums/sound-files/kick.wav'],
   volume: 0.6,
 })
 
 var snare = new Howl({
-  src: ['./sound-files/snare.wav'],
+  src: ['./drums/sound-files/snare.wav'],
   volume: 0.6,
 })
 
 var hihat = new Howl({
-  src: ['./sound-files/hihat_closed.wav'],
+  src: ['./drums/sound-files/hihat_closed.wav'],
   volume: 0.6,
 })
 
 var crash = new Howl({
-  src: ['./sound-files/crash.wav'],
+  src: ['./drums/sound-files/crash.wav'],
   volume: 0.6,
 })
 
 var tom_hi = new Howl({
-  src: ['./sound-files/tom_hi.wav'],
+  src: ['./drums/sound-files/tom_hi.wav'],
   volume: 0.6,
 })
 
 var tom_med = new Howl({
-  src: ['./sound-files/tom_med.wav'],
+  src: ['./drums/sound-files/tom_med.wav'],
   volume: 0.6,
 })
 

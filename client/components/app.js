@@ -1,5 +1,5 @@
 import React from 'react'
-import playDrums from '../drum-machine.js'
+import playDrums from '../drums/drum-machine.js'
 
 export default class App extends React.Component {
   constructor(props) {
