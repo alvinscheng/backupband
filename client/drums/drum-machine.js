@@ -1,47 +1,54 @@
 const { Howl } = require('howler')
 
-var kick = new Howl({
+const kick = new Howl({
   src: ['./drums/sound-files/kick.wav'],
-  volume: 0.6,
+  volume: 0.6
 })
 
-var snare = new Howl({
+const snare = new Howl({
   src: ['./drums/sound-files/snare.wav'],
-  volume: 0.6,
+  volume: 0.6
 })
 
-var hihat = new Howl({
+const hiHat = new Howl({
   src: ['./drums/sound-files/hihat_closed.wav'],
-  volume: 0.6,
+  volume: 0.6
 })
 
-var crash = new Howl({
+const crash = new Howl({
   src: ['./drums/sound-files/crash.wav'],
-  volume: 0.6,
+  volume: 0.6
 })
 
-var tom_hi = new Howl({
+const tomHi = new Howl({
   src: ['./drums/sound-files/tom_hi.wav'],
-  volume: 0.6,
+  volume: 0.6
 })
 
-var tom_med = new Howl({
+const tomMed = new Howl({
   src: ['./drums/sound-files/tom_med.wav'],
-  volume: 0.6,
+  volume: 0.6
 })
 
-export default function playDrums(key) {
-  switch(key) {
+const sideStick = new Howl({
+  src: ['./drums/sound-files/side-stick.wav'],
+  volume: 0.6
+})
+
+function playDrums(key) {
+  switch (key) {
     case 70: kick.play()
       break
     case 74: snare.play()
       break
-    case 69: hihat.play()
+    case 69: hiHat.play()
       break
     case 87: crash.play()
       break
-    case 73: tom_hi.play()
+    case 73: tomHi.play()
       break
-    case 79: tom_med.play()
+    case 79: tomMed.play()
   }
 }
+
+module.exports = { playDrums, sideStick, hiHat }

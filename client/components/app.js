@@ -34,7 +34,7 @@ export default class App extends React.Component {
         <h1>Play the Drums!</h1>
         <h3>F = Kick Drum | J = Snare Drum | E = Hi Hat (closed) | W = Cymbal | I = Hi Tom | O = Kick Drum</h3>
         <h3 onClick={this.startMetro}>START METRONOME</h3>
-        <h3 onClick={this.stopMetro}>STOP THE BEEPING!!!</h3>
+        <h3 onClick={this.stopMetro}>STOP IT!!!!</h3>
         <RenderBand />
       </div>
     )
