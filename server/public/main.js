@@ -1,33 +1,6 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _app = require('../components/app.js');
-
-var _app2 = _interopRequireDefault(_app);
-
-var _drum_machine = require('../components/drum_machine.js');
-
-var _drum_machine2 = _interopRequireDefault(_drum_machine);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_reactDom2.default.render(_react2.default.createElement(_app2.default, null), document.querySelector('#content'));
-
-window.addEventListener('keydown', keyed => {
-  (0, _drum_machine2.default)(keyed.keyCode);
-});
-
-},{"../components/app.js":2,"../components/drum_machine.js":3,"react":187,"react-dom":35}],2:[function(require,module,exports){
-'use strict';
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -35,6 +8,10 @@ Object.defineProperty(exports, "__esModule", {
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _drumMachine = require('../drum-machine.js');
+
+var _drumMachine2 = _interopRequireDefault(_drumMachine);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44,7 +21,9 @@ class App extends _react2.default.Component {
     this.state = {};
   }
   componentDidMount() {
-    console.log('Component mounted.');
+    window.addEventListener('keydown', keyed => {
+      (0, _drumMachine2.default)(keyed.keyCode);
+    });
   }
   render() {
     return _react2.default.createElement(
@@ -90,7 +69,7 @@ class App extends _react2.default.Component {
 }
 exports.default = App;
 
-},{"react":187}],3:[function(require,module,exports){
+},{"../drum-machine.js":2,"react":187}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -151,7 +130,26 @@ function playDrums(key) {
   }
 }
 
-},{"howler":28}],4:[function(require,module,exports){
+},{"howler":28}],3:[function(require,module,exports){
+'use strict';
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _app = require('./components/app.js');
+
+var _app2 = _interopRequireDefault(_app);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_reactDom2.default.render(_react2.default.createElement(_app2.default, null), document.querySelector('#content'));
+
+},{"./components/app.js":1,"react":187,"react-dom":35}],4:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -24112,4 +24110,4 @@ module.exports = traverseAllChildren;
 
 module.exports = require('./lib/React');
 
-},{"./lib/React":164}]},{},[1]);
+},{"./lib/React":164}]},{},[3]);

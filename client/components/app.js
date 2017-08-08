@@ -1,4 +1,5 @@
 import React from 'react'
+import playDrums from '../drum-machine.js'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -6,7 +7,9 @@ export default class App extends React.Component {
     this.state = {}
   }
   componentDidMount() {
-    console.log('Component mounted.')
+    window.addEventListener('keydown', keyed => {
+      playDrums(keyed.keyCode)
+    })
   }
   render() {
     return (

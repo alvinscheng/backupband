@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle": "browserify client/index.js -o client/main.js -t babelify",
-    "watchbundle": "watchify client/index.js -o client/main.js -t babelify"
+    "bundle": "browserify client/index.js -o server/public/main.js -t babelify",
+    "watchbundle": "watchify client/index.js -o server/public/main.js -t babelify"
   },
   "repository": {
     "type": "git",
