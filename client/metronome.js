@@ -45,21 +45,4 @@ sched.on("stop", () => {
   masterGain = null;
 });
 
-document.addEventListener("visibilitychange", () => {
-  if (document.visibilityState === "visible") {
-    sched.aheadTime = 0.1;
-  } else {
-    sched.aheadTime = 1.0;
-    sched.process();
-  }
-});
-
-document.getElementById("start-button").addEventListener("click", () => {
-  sched.start(metronome);
-});
-
-document.getElementById("stop-button").addEventListener("click", () => {
-  sched.stop(true);
-});
-
 module.exports = { metronome, sched, ticktack }
