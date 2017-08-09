@@ -33,17 +33,20 @@ export default class App extends React.Component {
   }
 }
 
-function startMetro() {
-  sched.start(metronome)
-}
-function stopMetro() {
-  sched.stop(true)
-}
-
 const audioContext = new AudioContext()
 const sched = new WebAudioScheduler({ context: audioContext, timerAPI: WorkerTimer, interval: 0.025, aheadTime: 1.0 })
 
 let intensity = 0
+
+function startMetro() {
+  if (metronome.running) return
+  metronome.running = true
+  sched.start(metronome)
+}
+function stopMetro() {
+  metronome.running = false
+  sched.stop(true)
+}
 
 function intensityUp() {
   if (intensity > 4) return
