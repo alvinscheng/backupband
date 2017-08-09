@@ -41,6 +41,8 @@
     "pg": "^7.0.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
     "web-audio-scheduler": "^1.4.0",
     "worker-timer": "^1.1.0"
   }

@@ -8,6 +8,7 @@ function beatOne(metro) {
       break
     case 1:
       kick.play()
+      hiHat.play()
       break
     case 2:
       kick.play()
