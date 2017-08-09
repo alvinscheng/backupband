@@ -12,15 +12,6 @@ export default class App extends React.Component {
     window.addEventListener('keydown', keyed => {
       playDrums(keyed.keyCode)
     })
-    document.addEventListener('visibilitychange', () => {
-      if (document.visibilityState === 'visible') {
-        sched.aheadTime = 0.1
-      }
-      else {
-        sched.aheadTime = 1.0
-        sched.process()
-      }
-    })
   }
   startMetro() {
     sched.start(metronome)
@@ -32,7 +23,8 @@ export default class App extends React.Component {
     return (
       <div>
         <h1>Play the Drums!</h1>
-        <h3>F = Kick Drum | J = Snare Drum | E = Hi Hat (closed) | W = Cymbal | I = Hi Tom | O = Kick Drum</h3>
+        <h3>F = Kick Drum | J = Snare Drum | E = Hi Hat (closed) | W = Cymbal</h3>
+        <h3>I = Hi Tom | O = Mid Tom | Q = Cross Stick</h3>
         <h3 onClick={this.startMetro}>START METRONOME</h3>
         <h3 onClick={this.stopMetro}>STOP IT!!!!</h3>
         <RenderBand />
