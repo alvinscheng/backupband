@@ -1,13 +1,12 @@
 import { sideStick, kick, snare, hiHat, crash, tomHi, tomMed } from './drums/drums.js'
 
 function beatOne(metro) {
-  let intensity = metro.args
+  let intensity = metro.args.intensity
   switch (intensity) {
     case 0:
       sideStick.play()
       break
     case 1:
-      console.log('case 1')
       kick.play()
       break
     case 2:
@@ -30,7 +29,7 @@ function beatOne(metro) {
 }
 
 function beatTwo(metro) {
-  let intensity = metro.args
+  let intensity = metro.args.intensity
   switch (intensity) {
     case 0:
       hiHat.play()
@@ -61,7 +60,7 @@ function beatTwo(metro) {
 }
 
 function beatThree(metro) {
-  let intensity = metro.args
+  let intensity = metro.args.intensity
   switch (intensity) {
     case 0:
       hiHat.play()
@@ -89,7 +88,7 @@ function beatThree(metro) {
 }
 
 function beatFour(metro) {
-  let intensity = metro.args
+  let intensity = metro.args.intensity
   switch (intensity) {
     case 0:
       hiHat.play()
