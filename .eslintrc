@@ -22,9 +22,6 @@
   "globals": {
       "React": true
   },
-  "ecmaFeatures": {
-      "jsx": true
-  },
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 6

@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+body {
+  background-color: #ecf0f1;
+}
+
+.beat-row {
+  padding: 2rem;
+}
+
+.band,
+#curBeat {
+  height: 250px;
+}
+
+#curBeat {
+  background-color: #36d7b7;
+}
+
+#logo {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Love Ya Like A Sister', cursive;
+  font-size: 11rem;
+  text-align: center;
+}
+
+.control-bar {
+  text-align: center;
+}
+
+.controls {
+  display: inline-block;
+  text-align: center;
+  width: 50%;
+}
+
+h5 {
+  text-align: center;
+}

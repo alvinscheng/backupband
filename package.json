@@ -20,6 +20,8 @@
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
+    "stylelint": "^8.0.0",
+    "stylelint-config-standard": "^17.0.0",
     "watchify": "^3.9.0"
   },
   "dependencies": {
@@ -38,6 +40,10 @@
     "path": "^0.12.7",
     "pg": "^7.0.2",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "web-audio-scheduler": "^1.4.0",
+    "worker-timer": "^1.1.0"
   }
 }
