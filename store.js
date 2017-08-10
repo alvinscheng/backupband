@@ -5,7 +5,7 @@ const initialState = { beat: 1 }
 function reducer(state, action) {
   switch (action.type) {
     case 'BEAT_CHANGE':
-      return { beat: action.payload.beat }
+      return { beat: action.payload.beat, intensity: action.payload.intensity }
     default: return state
   }
 }
