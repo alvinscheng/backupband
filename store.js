@@ -1,6 +1,6 @@
 import { createStore } from 'redux'
 
-const initialState = { beat: 1 }
+const initialState = { beat: 1, intensity: 0 }
 
 function reducer(state, action) {
   switch (action.type) {

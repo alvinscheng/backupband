@@ -42,7 +42,7 @@ function beatTwo(metro) {
   })
   switch (intensity) {
     case 0:
-      hiHat.play()
+      sideStick.play()
       break
     case 1:
       kick.play()
@@ -77,7 +77,7 @@ function beatThree(metro) {
   })
   switch (intensity) {
     case 0:
-      hiHat.play()
+      sideStick.play()
       break
     case 1:
       kick.play()
@@ -109,7 +109,7 @@ function beatFour(metro) {
   })
   switch (intensity) {
     case 0:
-      hiHat.play()
+      sideStick.play()
       break
     case 1:
       kick.play()
