@@ -1,6 +1,11 @@
 import { sideStick, kick, snare, hiHat, crash, tomHi, tomMed } from './drums/drums.js'
+import store from '../store'
 
 function beatOne(metro) {
+  store.dispatch({
+    type: 'BEAT_CHANGE',
+    payload: { beat: 1 }
+  })
   let intensity = metro.args.intensity
   switch (intensity) {
     case 0:
@@ -30,6 +35,10 @@ function beatOne(metro) {
 }
 
 function beatTwo(metro) {
+  store.dispatch({
+    type: 'BEAT_CHANGE',
+    payload: { beat: 2 }
+  })
   let intensity = metro.args.intensity
   switch (intensity) {
     case 0:
@@ -61,6 +70,10 @@ function beatTwo(metro) {
 }
 
 function beatThree(metro) {
+  store.dispatch({
+    type: 'BEAT_CHANGE',
+    payload: { beat: 3 }
+  })
   let intensity = metro.args.intensity
   switch (intensity) {
     case 0:
@@ -89,6 +102,10 @@ function beatThree(metro) {
 }
 
 function beatFour(metro) {
+  store.dispatch({
+    type: 'BEAT_CHANGE',
+    payload: { beat: 4 }
+  })
   let intensity = metro.args.intensity
   switch (intensity) {
     case 0:

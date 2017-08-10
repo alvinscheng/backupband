@@ -29,7 +29,6 @@ function intensityDown() {
 
 function metronome(e) {
   const t0 = e.playbackTime
-  console.log('Intensity (in metronome func): ', intensity)
   sched.insert(t0 + 0.000, beatOne, {intensity: intensity, beat: 1})
   sched.insert(t0 + 0.500, beatTwo, {intensity: intensity, beat: 2})
   sched.insert(t0 + 1.000, beatThree, {intensity: intensity, beat: 3})

@@ -1,9 +1,10 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import playDrums from '../drums/drum-machine.js'
 import RenderBand from './band.js'
 import { startMetro, stopMetro, intensityUp, intensityDown } from '../metronome.js'
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {}
@@ -14,6 +15,7 @@ export default class App extends React.Component {
     })
   }
   render() {
+    console.log(this.props)
     return (
       <div>
         <h1>Play the Drums!</h1>
@@ -24,8 +26,16 @@ export default class App extends React.Component {
         <h3>Intensity (Click to change)</h3>
         <span onClick={intensityUp}>UP or </span>
         <span onClick={intensityDown}>DOWN</span>
-        <RenderBand />
+        <RenderBand beat={this.props.beat}/>
       </div>
     )
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    beat: state.beat
+  }
+}
+
+export default connect(mapStateToProps)(App)
