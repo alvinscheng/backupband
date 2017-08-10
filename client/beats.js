@@ -59,7 +59,7 @@ function beatTwo(metro) {
     case 4:
       kick.play()
       snare.play()
-      hiHat.play()
+      crash.play()
       break
     case 99:
       snare.play()
@@ -91,7 +91,7 @@ function beatThree(metro) {
       break
     case 4:
       kick.play()
-      hiHat.play()
+      crash.play()
       break
     case 99:
       snare.play()
@@ -126,7 +126,7 @@ function beatFour(metro) {
     case 4:
       kick.play()
       snare.play()
-      hiHat.play()
+      crash.play()
       break
     case 99:
       snare.play()

@@ -17,9 +17,9 @@ body {
 }
 
 #curBeat {
-  background-color: #f1c40f;
+  background-color: #36d7b7;
 }
 
-span {
-  font-size: 1.5rem;
+.controls {
+  text-align: center;
 }

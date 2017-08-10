@@ -17,14 +17,29 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Play the Drums!</h1>
-        <h3>F = Kick Drum | J = Snare Drum | E = Hi Hat (closed) | W = Cymbal</h3>
-        <h3>I = Hi Tom | O = Mid Tom | Q = Cross Stick</h3>
-        <h3 onClick={startMetro}>START METRONOME</h3>
-        <h3 onClick={stopMetro}>STOP IT!!!!</h3>
-        <h3>Intensity (Click to change)</h3>
-        <span onClick={intensityUp}>UP or </span>
-        <span onClick={intensityDown}>DOWN</span>
+        <div className="controls">
+          <h1>Play the Drums!</h1>
+          <h3>F = Kick Drum | J = Snare Drum | E = Hi Hat (closed) | W = Cymbal</h3>
+          <h3>I = Hi Tom | O = Mid Tom | Q = Cross Stick</h3>
+          <h3>Metronome</h3>
+          <button onClick={startMetro} className="ui labeled icon button">
+            <i className="play icon"></i>
+            Start
+          </button>
+          <button onClick={stopMetro} className="ui right labeled icon button">
+            <i className="stop icon"></i>
+            Stop
+          </button>
+          <h3>Intensity</h3>
+          <button onClick={intensityUp} className="ui labeled icon button">
+            <i className="arrow up icon"></i>
+            Raise
+          </button>
+          <button onClick={intensityDown} className="ui right labeled icon button">
+            <i className="arrow down icon"></i>
+            Lower
+          </button>
+        </div>
         <RenderBand beat={this.props.beat}/>
       </div>
     )
