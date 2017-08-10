@@ -14,7 +14,11 @@ body {
 
 .band,
 #curBeat {
-  height: 250px;
+  height: 300px;
+}
+
+.band > .content > img {
+  filter: grayscale(70%);
 }
 
 #curBeat {

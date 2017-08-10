@@ -1,18 +1,24 @@
 import React from 'react'
 
 const beatDivs = [1, 2, 3, 4]
+const drumPics = {
+  0: ['./pics/sticks.png', './pics/sticks.png', './pics/sticks.png', './pics/sticks.png'],
+  1: ['./pics/kick.png', './pics/kick.png', './pics/kick.png', './pics/kick.png'],
+  2: ['./pics/kick.png', './pics/kick-snare.png', './pics/kick.png', './pics/kick-snare.png'],
+  3: ['./pics/kick-hihat.png', './pics/kick-snare-hihat.png', './pics/kick-hihat.png', './pics/kick-snare-hihat.png'],
+  4: ['./pics/kick-crash.png', './pics/kick-snare-crash.png', './pics/kick-crash.png', './pics/kick-snare-crash.png']
+}
 
 export default function RenderBand(props) {
   return (
     <div className="ui cards beat-row">
       {
         beatDivs.map((i) => {
-          console.log('Props in RenderBand ', props, 'I ', i)
           if (i === props.beat) {
-            console.log('matched div to beat!')
             return (
               <div key={ i } className="ui raised centered card" id="curBeat">
                 <div className="content">
+                  <img src={drumPics[props.intensity][i - 1]} className="ui image"/>
                 </div>
               </div>
             )
@@ -20,6 +26,7 @@ export default function RenderBand(props) {
           return (
             <div key={ i } className="ui raised centered card band">
               <div className="content">
+                <img src={drumPics[props.intensity][i - 1]} className="ui image"/>
               </div>
             </div>
           )

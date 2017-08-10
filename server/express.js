@@ -6,7 +6,7 @@ const app = express()
 const jsonParser = bodyParser.json()
 
 app.use(jsonParser)
-app.use('/', express.static(path.join(__dirname, 'client')))
+app.use('/', express.static(path.join(__dirname, 'public')))
 
 app.listen(3000, () => {
   console.log('Listening on Port 3000...')

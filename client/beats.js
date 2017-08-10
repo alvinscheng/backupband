@@ -1,15 +1,16 @@
-import { sideStick, kick, snare, hiHat, crash, tomHi, tomMed } from './drums/drums.js'
+import { sideStick, kick, snare, hiHat, crash, tomHi, tomMed } from './drums.js'
 import store from '../store'
 
 function beatOne(metro) {
+  let intensity = metro.args.intensity
   store.dispatch({
     type: 'BEAT_CHANGE',
-    payload: { beat: 1 }
+    payload: { beat: 1, intensity: intensity }
   })
-  let intensity = metro.args.intensity
   switch (intensity) {
     case 0:
       sideStick.play()
+      hiHat.play()
       break
     case 1:
       kick.play()
@@ -35,14 +36,14 @@ function beatOne(metro) {
 }
 
 function beatTwo(metro) {
+  let intensity = metro.args.intensity
   store.dispatch({
     type: 'BEAT_CHANGE',
-    payload: { beat: 2 }
+    payload: { beat: 2, intensity: intensity }
   })
-  let intensity = metro.args.intensity
   switch (intensity) {
     case 0:
-      hiHat.play()
+      sideStick.play()
       break
     case 1:
       kick.play()
@@ -70,14 +71,14 @@ function beatTwo(metro) {
 }
 
 function beatThree(metro) {
+  let intensity = metro.args.intensity
   store.dispatch({
     type: 'BEAT_CHANGE',
-    payload: { beat: 3 }
+    payload: { beat: 3, intensity: intensity }
   })
-  let intensity = metro.args.intensity
   switch (intensity) {
     case 0:
-      hiHat.play()
+      sideStick.play()
       break
     case 1:
       kick.play()
@@ -102,14 +103,14 @@ function beatThree(metro) {
 }
 
 function beatFour(metro) {
+  let intensity = metro.args.intensity
   store.dispatch({
     type: 'BEAT_CHANGE',
-    payload: { beat: 4 }
+    payload: { beat: 4, intensity: intensity }
   })
-  let intensity = metro.args.intensity
   switch (intensity) {
     case 0:
-      hiHat.play()
+      sideStick.play()
       break
     case 1:
       kick.play()

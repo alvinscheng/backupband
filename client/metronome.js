@@ -3,7 +3,7 @@ import { beatOne, beatTwo, beatThree, beatFour } from './beats.js'
 import WorkerTimer from 'worker-timer'
 
 const audioContext = new AudioContext()
-const sched = new WebAudioScheduler({ context: audioContext, timerAPI: WorkerTimer, interval: 0.025, aheadTime: 1.0 })
+const sched = new WebAudioScheduler({ context: audioContext, timerAPI: WorkerTimer })
 
 let intensity = 0
 
