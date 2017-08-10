@@ -2,7 +2,8 @@
   "name": "backupband",
   "version": "0.3.0",
   "engines": {
-    "node": "8.x",
+    "node": "8.x"
+  },
   "description": "A web app for songwriters to quickly and easily add backing music to their songs.",
   "main": "app.js",
   "scripts": {
@@ -26,6 +27,7 @@
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
+    "nodemon": "^1.11.0",
     "npm-run-all": "^4.0.2",
     "stylelint": "^8.0.0",
     "stylelint-config-standard": "^17.0.0",
