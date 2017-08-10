@@ -4,28 +4,19 @@
 }
 
 body {
-  background-color: #34495e;
+  background-color: #ecf0f1;
 }
 
 .beat-row {
-  text-align: center;
+  padding: 2rem;
 }
 
 .band,
-.curBeat {
-  display: inline-block;
-  margin: 20px;
-  width: 250px;
+#curBeat {
   height: 250px;
-  border: 3px solid black;
-  border-radius: 4px;
 }
 
-.band {
-  background-color: #95a5a6;
-}
-
-.curBeat {
+#curBeat {
   background-color: #f1c40f;
 }
 
