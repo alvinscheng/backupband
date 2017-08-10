@@ -17,30 +17,33 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div className="controls">
-          <h1>Play the Drums!</h1>
-          <h3>F = Kick Drum | J = Snare Drum | E = Hi Hat (closed) | W = Cymbal</h3>
-          <h3>I = Hi Tom | O = Mid Tom | Q = Cross Stick</h3>
-          <h3>Metronome</h3>
-          <button onClick={startMetro} className="ui labeled icon button">
-            <i className="play icon"></i>
-            Start
-          </button>
-          <button onClick={stopMetro} className="ui right labeled icon button">
-            <i className="stop icon"></i>
-            Stop
-          </button>
-          <h3>Intensity</h3>
-          <button onClick={intensityUp} className="ui labeled icon button">
-            <i className="arrow up icon"></i>
-            Raise
-          </button>
-          <button onClick={intensityDown} className="ui right labeled icon button">
-            <i className="arrow down icon"></i>
-            Lower
-          </button>
+        <div id="logo">Backup Band</div>
+        <div className="control-bar">
+          <div className="controls">
+            <h3>Metronome</h3>
+            <button onClick={startMetro} className="ui labeled icon button">
+              <i className="play icon"></i>
+              Start
+            </button>
+            <button onClick={stopMetro} className="ui right labeled icon button">
+              <i className="stop icon"></i>
+              Stop
+            </button>
+          </div>
+          <div className="controls">
+            <h3>Intensity</h3>
+            <button onClick={intensityUp} className="ui labeled icon button">
+              <i className="arrow up icon"></i>
+              Raise
+            </button>
+            <button onClick={intensityDown} className="ui right labeled icon button">
+              <i className="arrow down icon"></i>
+              Lower
+            </button>
+          </div>
         </div>
         <RenderBand beat={this.props.beat}/>
+        <h5>Free Play: F = Kick Drum | J = Snare Drum | E = Hi Hat (closed) | W = Cymbal | I = Hi Tom | O = Mid Tom | Q = Cross Stick</h5>
       </div>
     )
   }
