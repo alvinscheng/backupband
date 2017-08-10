@@ -2,11 +2,11 @@ import React from 'react'
 
 const beatDivs = [1, 2, 3, 4]
 const drumPics = {
-  0: ['./drums/pics/sticks.png', './drums/pics/sticks.png', './drums/pics/sticks.png', './drums/pics/sticks.png'],
-  1: ['./drums/pics/kick.png', './drums/pics/kick.png', './drums/pics/kick.png', './drums/pics/kick.png'],
-  2: ['./drums/pics/kick.png', './drums/pics/kick-snare.png', './drums/pics/kick.png', './drums/pics/kick-snare.png'],
-  3: ['./drums/pics/kick-hihat.png', './drums/pics/kick-snare-hihat.png', './drums/pics/kick-hihat.png', './drums/pics/kick-snare-hihat.png'],
-  4: ['./drums/pics/kick-crash.png', './drums/pics/kick-snare-crash.png', './drums/pics/kick-crash.png', './drums/pics/kick-snare-crash.png']
+  0: ['./pics/sticks.png', './pics/sticks.png', './pics/sticks.png', './pics/sticks.png'],
+  1: ['./pics/kick.png', './pics/kick.png', './pics/kick.png', './pics/kick.png'],
+  2: ['./pics/kick.png', './pics/kick-snare.png', './pics/kick.png', './pics/kick-snare.png'],
+  3: ['./pics/kick-hihat.png', './pics/kick-snare-hihat.png', './pics/kick-hihat.png', './pics/kick-snare-hihat.png'],
+  4: ['./pics/kick-crash.png', './pics/kick-snare-crash.png', './pics/kick-crash.png', './pics/kick-snare-crash.png']
 }
 
 export default function RenderBand(props) {

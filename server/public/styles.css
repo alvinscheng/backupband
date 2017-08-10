@@ -18,7 +18,7 @@ body {
 }
 
 .band > .content > img {
-  filter: grayscale(100%);
+  filter: grayscale(70%);
 }
 
 #curBeat {

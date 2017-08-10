@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import playDrums from '../drums/drum-machine.js'
+import playDrums from '../drum-machine.js'
 import RenderBand from './band.js'
 import { startMetro, stopMetro, intensityUp, intensityDown } from '../metronome.js'
 

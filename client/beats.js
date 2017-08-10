@@ -1,4 +1,4 @@
-import { sideStick, kick, snare, hiHat, crash, tomHi, tomMed } from './drums/drums.js'
+import { sideStick, kick, snare, hiHat, crash, tomHi, tomMed } from './drums.js'
 import store from '../store'
 
 function beatOne(metro) {
@@ -10,6 +10,7 @@ function beatOne(metro) {
   switch (intensity) {
     case 0:
       sideStick.play()
+      hiHat.play()
       break
     case 1:
       kick.play()
