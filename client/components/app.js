@@ -42,7 +42,7 @@ class App extends React.Component {
             </button>
           </div>
         </div>
-        <RenderBand beat={this.props.beat}/>
+        <RenderBand beat={this.props.beat} intensity={this.props.intensity}/>
         <h5>Free Play: F = Kick Drum | J = Snare Drum | E = Hi Hat (closed) | W = Cymbal | I = Hi Tom | O = Mid Tom | Q = Cross Stick</h5>
       </div>
     )
@@ -51,7 +51,8 @@ class App extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    beat: state.beat
+    beat: state.beat,
+    intensity: state.intensity
   }
 }
 
