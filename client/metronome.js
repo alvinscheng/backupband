@@ -19,6 +19,13 @@ function stopMetro() {
   sched.stop(true)
 }
 
+function intensityChange(next) {
+  store.dispatch({
+    type: 'INTENSITY_CHANGE',
+    payload: { nextIntensity: next }
+  })
+}
+
 function intensityUp() {
   if (intensity >= 4) return
   intensity++
@@ -43,10 +50,3 @@ function metronome(e) {
 }
 
 module.exports = { startMetro, stopMetro, intensityUp, intensityDown }
-
-function intensityChange(next) {
-  store.dispatch({
-    type: 'INTENSITY_CHANGE',
-    payload: { nextIntensity: next }
-  })
-}
