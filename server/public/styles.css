@@ -25,6 +25,10 @@ body {
   background-color: #36d7b7;
 }
 
+#next-bar > .band > .content > img {
+  filter: grayscale(100%);
+}
+
 #logo {
   padding: 0.5rem;
   margin-bottom: 0.5rem;

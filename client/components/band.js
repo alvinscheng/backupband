@@ -11,27 +11,42 @@ const drumPics = {
 
 export default function RenderBand(props) {
   return (
-    <div className="ui cards beat-row">
-      {
-        beatDivs.map((i) => {
-          if (i === props.beat) {
+    <div>
+      <div className="ui cards beat-row">
+        {
+          beatDivs.map((i) => {
+            if (i === props.beat) {
+              return (
+                <div key={ i } className="ui raised centered card" id="curBeat">
+                  <div className="content">
+                    <img src={drumPics[props.intensity][i - 1]} className="ui image"/>
+                  </div>
+                </div>
+              )
+            }
             return (
-              <div key={ i } className="ui raised centered card" id="curBeat">
+              <div key={ i } className="ui raised centered card band">
                 <div className="content">
                   <img src={drumPics[props.intensity][i - 1]} className="ui image"/>
                 </div>
               </div>
             )
-          }
-          return (
-            <div key={ i } className="ui raised centered card band">
-              <div className="content">
-                <img src={drumPics[props.intensity][i - 1]} className="ui image"/>
+          })
+        }
+      </div>
+      <div className="ui cards beat-row" id="next-bar">
+        {
+          beatDivs.map((i) => {
+            return (
+              <div key={ i } className="ui raised centered card band">
+                <div className="content">
+                  <img src={drumPics[props.intensity][i - 1]} className="ui image"/>
+                </div>
               </div>
-            </div>
-          )
-        })
-      }
+            )
+          })
+        }
+      </div>
     </div>
   )
 }
