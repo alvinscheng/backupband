@@ -8,6 +8,6 @@ const jsonParser = bodyParser.json()
 app.use(jsonParser)
 app.use('/', express.static(path.join(__dirname, 'public')))
 
-app.listen(PORT || 3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log('Backup Band is listening...')
 })
