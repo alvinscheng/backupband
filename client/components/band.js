@@ -40,7 +40,7 @@ export default function RenderBand(props) {
             return (
               <div key={ i } className="ui raised centered card band">
                 <div className="content">
-                  <img src={drumPics[props.intensity][i - 1]} className="ui image"/>
+                  <img src={drumPics[props.nextIntensity][i - 1]} className="ui image"/>
                 </div>
               </div>
             )

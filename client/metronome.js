@@ -1,10 +1,12 @@
 import WebAudioScheduler from 'web-audio-scheduler'
 import { beatOne, beatTwo, beatThree, beatFour } from './beats.js'
 import WorkerTimer from 'worker-timer'
+import store from '../store'
 
 const audioContext = new AudioContext()
 const sched = new WebAudioScheduler({ context: audioContext, timerAPI: WorkerTimer })
 
+sched.curBeat = 1
 let intensity = 0
 
 function startMetro() {
@@ -19,12 +21,16 @@ function stopMetro() {
 
 function intensityUp() {
   if (intensity >= 4) return
-  return intensity++
+  intensity++
+  intensityChange(intensity)
+  return intensity
 }
 
 function intensityDown() {
   if (intensity <= 0) return
-  return intensity--
+  intensity--
+  intensityChange(intensity)
+  return intensity
 }
 
 function metronome(e) {
@@ -37,3 +43,10 @@ function metronome(e) {
 }
 
 module.exports = { startMetro, stopMetro, intensityUp, intensityDown }
+
+function intensityChange(next) {
+  store.dispatch({
+    type: 'INTENSITY_CHANGE',
+    payload: { nextIntensity: next }
+  })
+}
