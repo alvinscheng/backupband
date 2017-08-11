@@ -20,6 +20,12 @@ function reducer(state, action) {
         intensity: state.intensity,
         nextIntensity: action.payload.nextIntensity
       }
+    case 'INTENSITY_CHANGE_ON_STOP':
+      return {
+        beat: state.beat,
+        intensity: action.payload.intensity,
+        nextIntensity: action.payload.nextIntensity
+      }
     default: return state
   }
 }

@@ -20,10 +20,18 @@ function stopMetro() {
 }
 
 function intensityChange(next) {
-  store.dispatch({
-    type: 'INTENSITY_CHANGE',
-    payload: { nextIntensity: next }
-  })
+  if (!metronome.running) {
+    store.dispatch({
+      type: 'INTENSITY_CHANGE_ON_STOP',
+      payload: { intensity: next, nextIntensity: next }
+    })
+  }
+  else {
+    store.dispatch({
+      type: 'INTENSITY_CHANGE',
+      payload: { nextIntensity: next }
+    })
+  }
 }
 
 function intensityUp() {
