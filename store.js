@@ -1,11 +1,31 @@
 import { createStore } from 'redux'
 
-const initialState = { beat: 1, intensity: 0 }
+const initialState = {
+  beat: 1,
+  intensity: 0,
+  nextIntensity: 0
+}
 
 function reducer(state, action) {
   switch (action.type) {
     case 'BEAT_CHANGE':
-      return { beat: action.payload.beat, intensity: action.payload.intensity }
+      return {
+        beat: action.payload.beat,
+        intensity: action.payload.intensity,
+        nextIntensity: state.nextIntensity
+      }
+    case 'INTENSITY_CHANGE':
+      return {
+        beat: state.beat,
+        intensity: state.intensity,
+        nextIntensity: action.payload.nextIntensity
+      }
+    case 'INTENSITY_CHANGE_ON_STOP':
+      return {
+        beat: state.beat,
+        intensity: action.payload.intensity,
+        nextIntensity: action.payload.nextIntensity
+      }
     default: return state
   }
 }
