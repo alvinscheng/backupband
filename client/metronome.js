@@ -6,7 +6,6 @@ import store from '../store'
 const audioContext = new AudioContext()
 const sched = new WebAudioScheduler({ context: audioContext, timerAPI: WorkerTimer })
 
-sched.curBeat = 1
 let intensity = 0
 
 function startMetro() {

@@ -6,7 +6,7 @@ const drumPics = {
   1: ['./pics/kick.png', './pics/kick.png', './pics/kick.png', './pics/kick.png'],
   2: ['./pics/kick.png', './pics/kick-snare.png', './pics/kick.png', './pics/kick-snare.png'],
   3: ['./pics/kick-hihat.png', './pics/kick-snare-hihat.png', './pics/kick-hihat.png', './pics/kick-snare-hihat.png'],
-  4: ['./pics/kick-crash.png', './pics/kick-snare-crash.png', './pics/kick-crash.png', './pics/kick-snare-crash.png']
+  4: ['./pics/kick-crash.png', './pics/kick-snare-hihat.png', './pics/kick-hihat.png', './pics/kick-snare-hihat.png']
 }
 
 export default function RenderBand(props) {

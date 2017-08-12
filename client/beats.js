@@ -1,4 +1,4 @@
-import { sideStick, kick, snare, hiHat, crash, tomHi, tomMed } from './drums.js'
+import { crossStick, clap, kick, snare, hiHatPedal, hiHatOpen, crash, tomHi, tomMed, tomLow } from './drums.js'
 import store from '../store'
 
 function beatOne(metro) {
@@ -9,29 +9,21 @@ function beatOne(metro) {
   })
   switch (intensity) {
     case 0:
-      sideStick.play()
-      hiHat.play()
+      crossStick.play()
       break
     case 1:
       kick.play()
-      hiHat.play()
       break
     case 2:
       kick.play()
       break
     case 3:
       kick.play()
-      hiHat.play()
+      hiHatOpen.play()
       break
     case 4:
       kick.play()
       crash.play()
-      break
-    case 99:
-      snare.play()
-      crash.play()
-      tomHi.play()
-      tomMed.play()
   }
 }
 
@@ -43,7 +35,7 @@ function beatTwo(metro) {
   })
   switch (intensity) {
     case 0:
-      sideStick.play()
+      crossStick.play()
       break
     case 1:
       kick.play()
@@ -55,18 +47,12 @@ function beatTwo(metro) {
     case 3:
       kick.play()
       snare.play()
-      hiHat.play()
+      hiHatOpen.play()
       break
     case 4:
       kick.play()
       snare.play()
-      crash.play()
-      break
-    case 99:
-      snare.play()
-      crash.play()
-      tomHi.play()
-      tomMed.play()
+      hiHatOpen.play()
   }
 }
 
@@ -78,7 +64,7 @@ function beatThree(metro) {
   })
   switch (intensity) {
     case 0:
-      sideStick.play()
+      crossStick.play()
       break
     case 1:
       kick.play()
@@ -88,17 +74,11 @@ function beatThree(metro) {
       break
     case 3:
       kick.play()
-      hiHat.play()
+      hiHatOpen.play()
       break
     case 4:
       kick.play()
-      crash.play()
-      break
-    case 99:
-      snare.play()
-      crash.play()
-      tomHi.play()
-      tomMed.play()
+      hiHatOpen.play()
   }
 }
 
@@ -110,7 +90,7 @@ function beatFour(metro) {
   })
   switch (intensity) {
     case 0:
-      sideStick.play()
+      crossStick.play()
       break
     case 1:
       kick.play()
@@ -122,18 +102,12 @@ function beatFour(metro) {
     case 3:
       kick.play()
       snare.play()
-      hiHat.play()
+      hiHatOpen.play()
       break
     case 4:
       kick.play()
       snare.play()
-      crash.play()
-      break
-    case 99:
-      snare.play()
-      crash.play()
-      tomHi.play()
-      tomMed.play()
+      hiHatOpen.play()
   }
 }
 
