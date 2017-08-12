@@ -1,6 +1,6 @@
 import { crossStick, clap, kick, snare, hiHatPedal, hiHatOpen, crash, tomHi, tomMed, tomLow } from './drums.js'
 
-export default function playDrums(key) {
+export default function keyboard(key) {
   switch (key) {
     case 82: crossStick.play()
       break
