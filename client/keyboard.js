@@ -1,6 +1,8 @@
 import { crossStick, clap, kick, snare, hiHatPedal, hiHatOpen, crash, tomHi, tomMed, tomLow } from './drums.js'
+import { runMetro, intensityUp, intensityDown } from './metronome.js'
 
-export default function keyboard(key) {
+export default function keyboard(keyed) {
+  let key = keyed.keyCode
   switch (key) {
     case 82: crossStick.play()
       break
@@ -21,5 +23,12 @@ export default function keyboard(key) {
     case 79: tomMed.play()
       break
     case 80: tomLow.play()
+      break
+    case 32: runMetro()
+      keyed.preventDefault()
+      break
+    case 78: intensityUp()
+      break
+    case 86: intensityDown()
   }
 }

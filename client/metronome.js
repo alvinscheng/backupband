@@ -8,7 +8,7 @@ const sched = new WebAudioScheduler({ context: audioContext, timerAPI: WorkerTim
 
 let intensity = 0
 
-function runMetro() {
+const runMetro = () => {
   if (metronome.running) {
     metronome.running = false
     sched.stop(true)
@@ -34,14 +34,14 @@ function intensityChange(next) {
   }
 }
 
-function intensityUp() {
+const intensityUp = () => {
   if (intensity >= 4) return
   intensity++
   intensityChange(intensity)
   return intensity
 }
 
-function intensityDown() {
+const intensityDown = () => {
   if (intensity <= 0) return
   intensity--
   intensityChange(intensity)

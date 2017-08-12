@@ -11,7 +11,7 @@ class App extends React.Component {
   }
   componentDidMount() {
     window.addEventListener('keydown', keyed => {
-      keyboard(keyed.keyCode)
+      keyboard(keyed)
     })
   }
   render() {
