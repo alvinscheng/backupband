@@ -14,7 +14,6 @@ body {
 
 #keyboard {
   text-align: center;
-  margin-bottom: 2rem;
 }
 
 #keyboard > img {
@@ -56,6 +55,11 @@ body {
   text-align: center;
 }
 
-h5 {
+#text-instructions {
   text-align: center;
+  margin: 2rem 0;
+}
+
+#text-instructions > p {
+  margin: 0;
 }

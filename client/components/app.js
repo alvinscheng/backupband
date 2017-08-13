@@ -22,9 +22,13 @@ class App extends React.Component {
           intensity={this.props.intensity}
           nextIntensity={this.props.nextIntensity}
         />
-        <h5>Free Play: F = Kick Drum | J = Snare Drum | R = Cross Stick | E = Hi Hat Pedal | W = Hi Hat Open | Q = Crash | U = Clap | I = Hi Tom | O = Mid Tom | P = Low Tom</h5>
         <div id="keyboard">
           <img src="./pics/BuBkeyboard.png" />
+        </div>
+        <div id="text-instructions">
+          <p><u>Free Play</u></p>
+          <p>Space: Start/Stop Metronome | V / Left Arrow = Intensity Down | N / Right Arrow = Intensity Up | Up/Down Arrow = Tempo Change</p>
+          <p>F = Kick Drum | J = Snare Drum | Q = Crash | W = Hi Hat Open | E = Hi Hat Pedal | R = Cross Stick | U = Clap | I = Hi Tom | O = Mid Tom | P = Low Tom</p>
         </div>
       </div>
     )
