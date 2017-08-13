@@ -49,6 +49,12 @@ const intensityDown = () => {
   return intensity
 }
 
+const setIntensity = (newIntensity) => {
+  intensity = newIntensity
+  intensityChange(intensity)
+  return intensity
+}
+
 const upTempo = () => {
   tempo = tempo + 5
   return tempo
@@ -69,4 +75,4 @@ function metronome(e) {
   sched.insert(t0 + (nextBeat * 4), metronome)
 }
 
-module.exports = { runMetro, intensityUp, intensityDown, upTempo, downTempo, intensity }
+module.exports = { runMetro, intensityUp, intensityDown, setIntensity, upTempo, downTempo, intensity }
