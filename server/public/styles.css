@@ -55,6 +55,11 @@ body {
   text-align: center;
 }
 
+#logo > img {
+  height: 10rem;
+  margin: 0 1rem -1rem;
+}
+
 #text-instructions {
   text-align: center;
   margin: 2rem 0;

@@ -16,7 +16,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div id="logo">Backup Band</div>
+        <div id="logo">Backup<img src="./pics/yahoo-dashed.png" />Band</div>
         <RenderBand
           beat={this.props.beat}
           intensity={this.props.intensity}
