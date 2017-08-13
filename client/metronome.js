@@ -69,4 +69,4 @@ function metronome(e) {
   sched.insert(t0 + (nextBeat * 4), metronome)
 }
 
-module.exports = { runMetro, intensityUp, intensityDown, upTempo, downTempo }
+module.exports = { runMetro, intensityUp, intensityDown, upTempo, downTempo, intensity }

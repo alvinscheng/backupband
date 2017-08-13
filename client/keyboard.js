@@ -27,9 +27,12 @@ export default function keyboard(keyed) {
     case 32: runMetro()
       keyed.preventDefault()
       break
-    case 78: intensityUp()
+    case 78:
+    case 39: intensityUp()
+      keyed.preventDefault()
       break
-    case 86: intensityDown()
+    case 86:
+    case 37: intensityDown()
       break
     case 38: upTempo()
       keyed.preventDefault()
