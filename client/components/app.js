@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import playDrums from '../drum-machine.js'
+import keyboard from '../keyboard.js'
 import RenderBand from './band.js'
-import { startMetro, stopMetro, intensityUp, intensityDown } from '../metronome.js'
+import { runMetro, intensityUp, intensityDown } from '../metronome.js'
 
 class App extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class App extends React.Component {
   }
   componentDidMount() {
     window.addEventListener('keydown', keyed => {
-      playDrums(keyed.keyCode)
+      keyboard(keyed)
     })
   }
   render() {
@@ -21,13 +21,9 @@ class App extends React.Component {
         <div className="control-bar">
           <div className="controls">
             <h3>Metronome</h3>
-            <button onClick={startMetro} className="ui labeled icon button">
+            <button onClick={runMetro} className="ui labeled icon button">
               <i className="play icon"></i>
-              Start
-            </button>
-            <button onClick={stopMetro} className="ui right labeled icon button">
-              <i className="stop icon"></i>
-              Stop
+              Start / Stop
             </button>
           </div>
           <div className="controls">
@@ -47,7 +43,10 @@ class App extends React.Component {
           intensity={this.props.intensity}
           nextIntensity={this.props.nextIntensity}
         />
-        <h5>Free Play: F = Kick Drum | J = Snare Drum | E = Hi Hat (closed) | W = Cymbal | I = Hi Tom | O = Mid Tom | Q = Cross Stick</h5>
+        <h5>Free Play: F = Kick Drum | J = Snare Drum | R = Cross Stick | E = Hi Hat Pedal | W = Hi Hat Open | Q = Crash | U = Clap | I = Hi Tom | O = Mid Tom | P = Low Tom</h5>
+        <div id="keyboard">
+          <img src="./pics/BuBkeyboard.png" />
+        </div>
       </div>
     )
   }

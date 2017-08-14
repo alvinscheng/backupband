@@ -6,17 +6,17 @@ import store from '../store'
 const audioContext = new AudioContext()
 const sched = new WebAudioScheduler({ context: audioContext, timerAPI: WorkerTimer })
 
-sched.curBeat = 1
 let intensity = 0
 
-function startMetro() {
-  if (metronome.running) return
-  metronome.running = true
-  sched.start(metronome)
-}
-function stopMetro() {
-  metronome.running = false
-  sched.stop(true)
+const runMetro = () => {
+  if (metronome.running) {
+    metronome.running = false
+    sched.stop(true)
+  }
+  else {
+    metronome.running = true
+    sched.start(metronome)
+  }
 }
 
 function intensityChange(next) {
@@ -34,14 +34,14 @@ function intensityChange(next) {
   }
 }
 
-function intensityUp() {
+const intensityUp = () => {
   if (intensity >= 4) return
   intensity++
   intensityChange(intensity)
   return intensity
 }
 
-function intensityDown() {
+const intensityDown = () => {
   if (intensity <= 0) return
   intensity--
   intensityChange(intensity)
@@ -57,4 +57,4 @@ function metronome(e) {
   sched.insert(t0 + 2.000, metronome)
 }
 
-module.exports = { startMetro, stopMetro, intensityUp, intensityDown }
+module.exports = { runMetro, intensityUp, intensityDown }
