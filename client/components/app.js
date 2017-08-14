@@ -2,14 +2,26 @@ import React from 'react'
 import { connect } from 'react-redux'
 import keyboard from '../keyboard.js'
 import RenderBand from './band.js'
+import Scroll from 'react-scroll'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {}
   }
+  scrollBottom() {
+    const scroll = Scroll.animateScroll
+
+    return scroll.scrollToBottom({
+      duration: 2500,
+      delay: 200,
+      smooth: true
+    })
+  }
+
   componentDidMount() {
     window.addEventListener('keydown', keyed => {
+      this.scrollBottom()
       keyboard(keyed)
     })
   }
