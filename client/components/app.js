@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import keyboard from '../keyboard.js'
 import RenderBand from './band.js'
-import { runMetro, intensityUp, intensityDown } from '../metronome.js'
 
 class App extends React.Component {
   constructor(props) {
@@ -17,35 +16,19 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div id="logo">Backup Band</div>
-        <div className="control-bar">
-          <div className="controls">
-            <h3>Metronome</h3>
-            <button onClick={runMetro} className="ui labeled icon button">
-              <i className="play icon"></i>
-              Start / Stop
-            </button>
-          </div>
-          <div className="controls">
-            <h3>Intensity</h3>
-            <button onClick={intensityUp} className="ui labeled icon button">
-              <i className="arrow up icon"></i>
-              Raise
-            </button>
-            <button onClick={intensityDown} className="ui right labeled icon button">
-              <i className="arrow down icon"></i>
-              Lower
-            </button>
-          </div>
-        </div>
+        <div id="logo">Backup<img src="./pics/yahoo-dashed.png" />Band</div>
         <RenderBand
           beat={this.props.beat}
           intensity={this.props.intensity}
           nextIntensity={this.props.nextIntensity}
         />
-        <h5>Free Play: F = Kick Drum | J = Snare Drum | R = Cross Stick | E = Hi Hat Pedal | W = Hi Hat Open | Q = Crash | U = Clap | I = Hi Tom | O = Mid Tom | P = Low Tom</h5>
         <div id="keyboard">
           <img src="./pics/BuBkeyboard.png" />
+        </div>
+        <div id="text-instructions">
+          <p><u>Free Play</u></p>
+          <p>Space: Start/Stop Metronome | V / Left Arrow = Intensity Down | N / Right Arrow = Intensity Up | Up/Down Arrow = Tempo Change</p>
+          <p>F = Kick Drum | J = Snare Drum | Q = Crash | W = Hi Hat Open | E = Hi Hat Pedal | R = Cross Stick | U = Clap | I = Hi Tom | O = Mid Tom | P = Low Tom</p>
         </div>
       </div>
     )

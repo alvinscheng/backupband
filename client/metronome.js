@@ -1,12 +1,12 @@
 import WebAudioScheduler from 'web-audio-scheduler'
 import { beatOne, beatTwo, beatThree, beatFour } from './beats.js'
-import WorkerTimer from 'worker-timer'
+import { Howler } from 'howler'
 import store from '../store'
 
-const audioContext = new AudioContext()
-const sched = new WebAudioScheduler({ context: audioContext, timerAPI: WorkerTimer })
+const sched = new WebAudioScheduler({ context: Howler.ctx })
 
 let intensity = 0
+let tempo = 120
 
 const runMetro = () => {
   if (metronome.running) {
@@ -48,13 +48,30 @@ const intensityDown = () => {
   return intensity
 }
 
-function metronome(e) {
-  const t0 = e.playbackTime
-  sched.insert(t0 + 0.000, beatOne, {intensity: intensity, beat: 1})
-  sched.insert(t0 + 0.500, beatTwo, {intensity: intensity, beat: 2})
-  sched.insert(t0 + 1.000, beatThree, {intensity: intensity, beat: 3})
-  sched.insert(t0 + 1.500, beatFour, {intensity: intensity, beat: 4})
-  sched.insert(t0 + 2.000, metronome)
+const setIntensity = (newIntensity) => {
+  intensity = newIntensity
+  intensityChange(intensity)
+  return intensity
 }
 
-module.exports = { runMetro, intensityUp, intensityDown }
+const upTempo = () => {
+  tempo = tempo + 5
+  return tempo
+}
+
+const downTempo = () => {
+  tempo = tempo - 5
+  return tempo
+}
+
+function metronome(e) {
+  let t0 = e.playbackTime
+  let nextBeat = (60 / tempo)
+  sched.insert(t0, beatOne, {intensity: intensity, beat: 1})
+  sched.insert(t0 + nextBeat, beatTwo, {intensity: intensity, beat: 2})
+  sched.insert(t0 + (nextBeat * 2), beatThree, {intensity: intensity, beat: 3})
+  sched.insert(t0 + (nextBeat * 3), beatFour, {intensity: intensity, beat: 4})
+  sched.insert(t0 + (nextBeat * 4), metronome)
+}
+
+module.exports = { runMetro, intensityUp, intensityDown, setIntensity, upTempo, downTempo, intensity }

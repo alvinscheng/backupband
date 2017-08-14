@@ -8,13 +8,13 @@ body {
   background-color: #ecf0f1;
 }
 
-#container {
+#content {
   max-width: 1300px;
+  margin: 0 auto;
 }
 
 #keyboard {
   text-align: center;
-  margin-bottom: 2rem;
 }
 
 #keyboard > img {
@@ -56,16 +56,16 @@ body {
   text-align: center;
 }
 
-.control-bar {
-  text-align: center;
+#logo > img {
+  height: 10rem;
+  margin: 0 1rem -1rem;
 }
 
-.controls {
-  display: inline-block;
+#text-instructions {
   text-align: center;
-  width: 50%;
+  margin: 2rem 0;
 }
 
-h5 {
-  text-align: center;
+#text-instructions > p {
+  margin: 0;
 }
