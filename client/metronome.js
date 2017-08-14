@@ -1,10 +1,9 @@
 import WebAudioScheduler from 'web-audio-scheduler'
 import { beatOne, beatTwo, beatThree, beatFour } from './beats.js'
-import WorkerTimer from 'worker-timer'
+import { Howler } from 'howler'
 import store from '../store'
 
-const audioContext = new AudioContext()
-const sched = new WebAudioScheduler({ context: audioContext, timerAPI: WorkerTimer })
+const sched = new WebAudioScheduler({ context: Howler.ctx })
 
 let intensity = 0
 let tempo = 120
@@ -68,7 +67,7 @@ const downTempo = () => {
 function metronome(e) {
   let t0 = e.playbackTime
   let nextBeat = (60 / tempo)
-  sched.insert(t0 + 0.000, beatOne, {intensity: intensity, beat: 1})
+  sched.insert(t0, beatOne, {intensity: intensity, beat: 1})
   sched.insert(t0 + nextBeat, beatTwo, {intensity: intensity, beat: 2})
   sched.insert(t0 + (nextBeat * 2), beatThree, {intensity: intensity, beat: 3})
   sched.insert(t0 + (nextBeat * 3), beatFour, {intensity: intensity, beat: 4})
