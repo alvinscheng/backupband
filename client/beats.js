@@ -3,9 +3,10 @@ import store from '../store'
 
 function beatOne(metro) {
   let intensity = metro.args.intensity
+  let beat = metro.args.beat
   store.dispatch({
     type: 'BEAT_CHANGE',
-    payload: { beat: 1, intensity: intensity }
+    payload: { beat: beat, intensity: intensity }
   })
   switch (intensity) {
     case 0:
@@ -27,9 +28,10 @@ function beatOne(metro) {
 
 function beatTwo(metro) {
   let intensity = metro.args.intensity
+  let beat = metro.args.beat
   store.dispatch({
     type: 'BEAT_CHANGE',
-    payload: { beat: 2, intensity: intensity }
+    payload: { beat: beat, intensity: intensity }
   })
   switch (intensity) {
     case 0:
@@ -52,9 +54,10 @@ function beatTwo(metro) {
 
 function beatThree(metro) {
   let intensity = metro.args.intensity
+  let beat = metro.args.beat
   store.dispatch({
     type: 'BEAT_CHANGE',
-    payload: { beat: 3, intensity: intensity }
+    payload: { beat: beat, intensity: intensity }
   })
   switch (intensity) {
     case 0:
@@ -73,9 +76,10 @@ function beatThree(metro) {
 
 function beatFour(metro) {
   let intensity = metro.args.intensity
+  let beat = metro.args.beat
   store.dispatch({
     type: 'BEAT_CHANGE',
-    payload: { beat: 4, intensity: intensity }
+    payload: { beat: beat, intensity: intensity }
   })
   switch (intensity) {
     case 0:
@@ -96,4 +100,31 @@ function beatFour(metro) {
   }
 }
 
-module.exports = { beatOne, beatTwo, beatThree, beatFour }
+function eighthNote(metro) {
+  let intensity = metro.args.intensity
+  let beat = metro.args.beat
+  store.dispatch({
+    type: 'BEAT_CHANGE',
+    payload: { beat: beat, intensity: intensity }
+  })
+  console.log('8th note function!', intensity, beat)
+  switch (intensity) {
+    case 0:
+    case 1:
+    case 2:
+      break
+    case 3:
+    case 4:
+      switch (beat) {
+        case 1.5:
+        case 2.5:
+        case 4.5:
+          break
+        case 3.5:
+          kick.play()
+          break
+      }
+  }
+}
+
+module.exports = { beatOne, beatTwo, beatThree, beatFour, eighthNote }
