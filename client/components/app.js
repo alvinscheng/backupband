@@ -9,41 +9,52 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {}
+    this.showKeys = this.showKeys.bind(this)
   }
-  scrollBottom() {
-    const scroll = Scroll.animateScroll
-
-    return scroll.scrollToBottom({
-      duration: 2500,
-      delay: 200,
-      smooth: true
-    })
-  }
-
   componentDidMount() {
     window.addEventListener('keydown', keyed => {
-      this.scrollBottom()
       keyboard(keyed)
     })
+  }
+  showKeys() {
+    if (this.state.keys) {
+      this.setState({ keys: false })
+    }
+    else {
+      this.setState({ keys: true })
+      const scroll = Scroll.animateScroll
+      return scroll.scrollToBottom({
+        duration: 2500,
+        delay: 200,
+        smooth: true
+      })
+    }
   }
   render() {
     return (
       <div>
         <div id="logo">Backup<img src="./pics/yahoo-dashed.png" />Band</div>
+        <div id="new-user"><a onClick={this.showKeys}>Show / Hide Keyboard</a></div>
         <RenderBand
           beat={this.props.beat}
           intensity={this.props.intensity}
           nextIntensity={this.props.nextIntensity}
         />
-        <div id="keyboard">
-          <img src="./pics/BuBkeyboard.png" />
-          <Keys/>
-        </div>
-        <div id="text-instructions">
-          <p><u>Free Play</u></p>
-          <p>Space: Start/Stop Metronome | V / Left Arrow = Intensity Down | N / Right Arrow = Intensity Up | Up/Down Arrow = Tempo Change</p>
-          <p>F = Kick Drum | J = Snare Drum | Q = Crash | W = Hi Hat Open | E = Hi Hat Pedal | R = Cross Stick | U = Clap | I = Hi Tom | O = Mid Tom | P = Low Tom</p>
-        </div>
+        {
+          this.state.keys
+            ? <div>
+              <div id="text-instructions">
+                <p><u>Free Play</u></p>
+                <p>Space: Start/Stop Metronome | V / Left Arrow = Intensity Down | N / Right Arrow = Intensity Up | Up/Down Arrow = Tempo Change</p>
+                <p>F = Kick Drum | J = Snare Drum | Q = Crash | W = Hi Hat Open | E = Hi Hat Pedal | R = Cross Stick | U = Clap | I = Hi Tom | O = Mid Tom | P = Low Tom</p>
+              </div>
+              <div id="keyboard">
+                <img src="./pics/BuBkeyboard.png" />
+                <Keys/>
+              </div>
+            </div>
+            : null
+        }
       </div>
     )
   }
@@ -53,7 +64,8 @@ function mapStateToProps(state) {
   return {
     beat: state.tempo.beat,
     intensity: state.tempo.intensity,
-    nextIntensity: state.tempo.nextIntensity
+    nextIntensity: state.tempo.nextIntensity,
+    keys: state.keys
   }
 }
 
