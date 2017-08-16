@@ -4,9 +4,11 @@ A web app for songwriters to easily add a simple backing drummer to their songs 
 ## Setup
 <p>Install [Git](https://git-scm.com/) and [Node](https://nodejs.org/en/).
 
-<p><code>$ git clone https://github.com/johnhaup/backupband.git
+<pre><code>
+<p>$ git clone https://github.com/johnhaup/backupband.git
 <p>$ cd backupband
-<p>$ npm run start</code>
+<p>$ npm run start
+</code></pre>
 
 <p>Navigate to [http://localhost:3000/](http://localhost:3000/) in your browser.
 
