@@ -1,7 +1,7 @@
 # backupband
 A web app for songwriters to easily add a simple backing drummer to their songs in real time.
 
-![readme](https://user-images.githubusercontent.com/26287153/29384323-865fca9c-8288-11e7-94b2-2efa6fb5b453.gif)
+(https://user-images.githubusercontent.com/26287153/29384323-865fca9c-8288-11e7-94b2-2efa6fb5b453.gif)
 
 ## Setup
 Install [Git](https://git-scm.com/) and [Node](https://nodejs.org/en/).
