@@ -2,14 +2,27 @@ import React from 'react'
 import { connect } from 'react-redux'
 import keyboard from '../keyboard.js'
 import RenderBand from './band.js'
+import Scroll from 'react-scroll'
+import Keys from './keys'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {}
   }
+  scrollBottom() {
+    const scroll = Scroll.animateScroll
+
+    return scroll.scrollToBottom({
+      duration: 2500,
+      delay: 200,
+      smooth: true
+    })
+  }
+
   componentDidMount() {
     window.addEventListener('keydown', keyed => {
+      this.scrollBottom()
       keyboard(keyed)
     })
   }
@@ -24,6 +37,7 @@ class App extends React.Component {
         />
         <div id="keyboard">
           <img src="./pics/BuBkeyboard.png" />
+          <Keys/>
         </div>
         <div id="text-instructions">
           <p><u>Free Play</u></p>
@@ -37,9 +51,9 @@ class App extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    beat: state.beat,
-    intensity: state.intensity,
-    nextIntensity: state.nextIntensity
+    beat: state.tempo.beat,
+    intensity: state.tempo.intensity,
+    nextIntensity: state.tempo.nextIntensity
   }
 }
 

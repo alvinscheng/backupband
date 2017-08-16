@@ -14,7 +14,14 @@ body {
 }
 
 #keyboard {
+  position: relative;
   text-align: center;
+}
+
+.highlight-key {
+  background-color: rgba(255, 255, 102, 0.7);
+  z-index: 2;
+  border-radius: 5px;
 }
 
 #keyboard > img {
