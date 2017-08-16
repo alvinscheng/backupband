@@ -1,5 +1,5 @@
 import WebAudioScheduler from 'web-audio-scheduler'
-import { beatOne, beatTwo, beatThree, beatFour } from './beats.js'
+import { beatOne, beatTwo, beatThree, beatFour, beat } from './beats.js'
 import { Howler } from 'howler'
 import store from '../store'
 
@@ -67,10 +67,10 @@ const downTempo = () => {
 function metronome(e) {
   let t0 = e.playbackTime
   let nextBeat = (60 / tempo)
-  sched.insert(t0, beatOne, {intensity: intensity, beat: 1})
-  sched.insert(t0 + nextBeat, beatTwo, {intensity: intensity, beat: 2})
-  sched.insert(t0 + (nextBeat * 2), beatThree, {intensity: intensity, beat: 3})
-  sched.insert(t0 + (nextBeat * 3), beatFour, {intensity: intensity, beat: 4})
+  sched.insert(t0, beat, {intensity: intensity, beat: 1})
+  sched.insert(t0 + nextBeat, beat, {intensity: intensity, beat: 2})
+  sched.insert(t0 + (nextBeat * 2), beat, {intensity: intensity, beat: 3})
+  sched.insert(t0 + (nextBeat * 3), beat, {intensity: intensity, beat: 4})
   sched.insert(t0 + (nextBeat * 4), metronome)
 }
 
