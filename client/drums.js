@@ -12,7 +12,7 @@ const clap = new Howl({
 
 const kick = new Howl({
   src: ['./sound-files/kick.wav'],
-  volume: 0.6
+  volume: 0.7
 })
 
 const snare = new Howl({
