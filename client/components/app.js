@@ -2,8 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import keyboard from '../keyboard.js'
 import RenderBand from './band.js'
+import RenderHelp from './help.js'
 import Scroll from 'react-scroll'
-import Keys from './keys'
 
 class App extends React.Component {
   constructor(props) {
@@ -60,29 +60,7 @@ class App extends React.Component {
         />
         {
           this.state.keys
-            ? <div onClick={this.showKeys}>
-              <div id="text-instructions">
-                <p><u>Free Play</u></p>
-                <p>Space: Start/Stop Metronome | V / Left Arrow = Intensity Down | N / Right Arrow = Intensity Up | Up/Down Arrow = Tempo Change</p>
-                <p>F = Kick Drum | J = Snare Drum | Q = Crash | W = Hi Hat Open | E = Hi Hat Pedal | R = Cross Stick | U = Clap | I = Hi Tom | O = Mid Tom | P = Low Tom</p>
-              </div>
-              <div id="keyboard">
-                <img src="./pics/BuBkeyboard.png" />
-                <Keys/>
-                <hr />
-              </div>
-              <div id="rock-out">
-                <div id="usbnumpad">
-                  <img src="./pics/usbnumpad.png" />
-                </div>
-                <div id="numpad-instructions">
-                  <p>Backup Band has the ability to work with a USB number pad. <a href="http://a.co/0o5OISP" target="_blank" rel="noopener noreferrer">This model</a> was used during testing. With some <a href="http://a.co/35It0lX" target="_blank" rel="noopener noreferrer">damage-free velcro strips</a> you can affix the number pad to your guitar and control Backup Band without touching your computer!</p>
-                  <p>Enter = Start / Stop Metronome | + = Increase Tempo | - = Decrease Tempo<br />
-                  0 = Intensity 0 | 1 = Intensity 1 | 4 = Intensity 2 | 7 = Intensity 3 | Num Lock = Intensity 4</p>
-                  <img src="./pics/guitar-numpad.png" />
-                </div>
-              </div>
-            </div>
+            ? <RenderHelp showKeys={this.showKeys}/>
             : null
         }
       </div>
