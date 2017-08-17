@@ -70,8 +70,7 @@ a {
   margin: 1rem 0;
 }
 
-#text-instructions > p,
-#numpad-instructions > p {
+#text-instructions > p {
   margin: 0;
 }
 
@@ -88,11 +87,16 @@ a {
 
 #keyboard > img {
   width: 70%;
-  margin-bottom: 1rem;
+}
+
+hr {
+  width: 60%;
+  margin: 1rem auto;
 }
 
 #rock-out {
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 #usbnumpad {
@@ -111,4 +115,8 @@ a {
   padding: 1rem;
   text-align: center;
   vertical-align: top;
+}
+
+#numpad-instructions > p > a {
+  text-decoration: underline;
 }

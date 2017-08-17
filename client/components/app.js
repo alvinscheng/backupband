@@ -52,7 +52,7 @@ class App extends React.Component {
     return (
       <div>
         <div id="logo">Backup{ this.yahoo() }Band</div>
-        <div id="new-user"><a onClick={this.showKeys}>Show / Hide Keyboard</a></div>
+        <div id="new-user"><a onClick={this.showKeys}>Show / Hide Help</a></div>
         <RenderBand
           beat={this.props.beat}
           intensity={this.props.intensity}
@@ -60,7 +60,7 @@ class App extends React.Component {
         />
         {
           this.state.keys
-            ? <div>
+            ? <div onClick={this.showKeys}>
               <div id="text-instructions">
                 <p><u>Free Play</u></p>
                 <p>Space: Start/Stop Metronome | V / Left Arrow = Intensity Down | N / Right Arrow = Intensity Up | Up/Down Arrow = Tempo Change</p>
@@ -69,19 +69,17 @@ class App extends React.Component {
               <div id="keyboard">
                 <img src="./pics/BuBkeyboard.png" />
                 <Keys/>
+                <hr />
               </div>
               <div id="rock-out">
                 <div id="usbnumpad">
                   <img src="./pics/usbnumpad.png" />
                 </div>
                 <div id="numpad-instructions">
-                  <p>Backup Band has the ability to work with a USB number pad.
-                    <a href="http://a.co/0o5OISP" target="_blank" rel="noopener noreferrer"> This model </a>
-                    was used during testing.</p>
-                  <p>With some <a href="http://a.co/35It0lX" target="_blank" rel="noopener noreferrer">damage-free velcro strips </a>
-                   you can affix the number pad to your guitar and control Backup Band without touching your computer!</p>
-                  <p>Enter = Start / Stop Metronome | + = Increase Tempo | - = Decrease Tempo</p>
-                  <p>0 = Intensity 0 | 1 = Intensity 1 | 4 = Intensity 2 | 7 = Intensity 3 | Num Lock = Intensity 4</p>
+                  <p>Backup Band has the ability to work with a USB number pad. <a href="http://a.co/0o5OISP" target="_blank" rel="noopener noreferrer">This model</a> was used during testing. With some <a href="http://a.co/35It0lX" target="_blank" rel="noopener noreferrer">damage-free velcro strips</a> you can affix the number pad to your guitar and control Backup Band without touching your computer!</p>
+                  <p>Enter = Start / Stop Metronome | + = Increase Tempo | - = Decrease Tempo<br />
+                  0 = Intensity 0 | 1 = Intensity 1 | 4 = Intensity 2 | 7 = Intensity 3 | Num Lock = Intensity 4</p>
+                  <img src="./pics/guitar-numpad.png" />
                 </div>
               </div>
             </div>
