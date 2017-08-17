@@ -12,8 +12,6 @@ function beatOne(metro) {
       crossStick.play()
       break
     case 1:
-      kick.play()
-      break
     case 2:
       kick.play()
       break
@@ -45,10 +43,6 @@ function beatTwo(metro) {
       snare.play()
       break
     case 3:
-      kick.play()
-      snare.play()
-      hiHatOpen.play()
-      break
     case 4:
       kick.play()
       snare.play()
@@ -67,15 +61,10 @@ function beatThree(metro) {
       crossStick.play()
       break
     case 1:
-      kick.play()
-      break
     case 2:
       kick.play()
       break
     case 3:
-      kick.play()
-      hiHatOpen.play()
-      break
     case 4:
       kick.play()
       hiHatOpen.play()
@@ -100,10 +89,6 @@ function beatFour(metro) {
       snare.play()
       break
     case 3:
-      kick.play()
-      snare.play()
-      hiHatOpen.play()
-      break
     case 4:
       kick.play()
       snare.play()
