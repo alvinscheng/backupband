@@ -10,6 +10,7 @@ class App extends React.Component {
     super(props)
     this.state = {}
     this.showKeys = this.showKeys.bind(this)
+    this.yahoo = this.yahoo.bind(this)
   }
   componentDidMount() {
     window.addEventListener('keydown', keyed => {
@@ -30,10 +31,27 @@ class App extends React.Component {
       })
     }
   }
+  yahoo() {
+    if (this.props.intensity !== 4) {
+      return <img src="./pics/yahoo-dashed.png" />
+    }
+    else {
+      switch (this.props.beat) {
+        case 1:
+          return <img src="./pics/yahoo-1.png" />
+        case 2:
+          return <img src="./pics/yahoo-2.png" />
+        case 3:
+          return <img src="./pics/yahoo-3.png" />
+        case 4:
+          return <img src="./pics/yahoo-4.png" />
+      }
+    }
+  }
   render() {
     return (
       <div>
-        <div id="logo">Backup<img src="./pics/yahoo-dashed.png" />Band</div>
+        <div id="logo">Backup{ this.yahoo() }Band</div>
         <div id="new-user"><a onClick={this.showKeys}>Show / Hide Keyboard</a></div>
         <RenderBand
           beat={this.props.beat}
