@@ -33,7 +33,7 @@ function beatTwo(metro) {
   })
   switch (intensity) {
     case 0:
-      crossStick.play()
+      hiHatPedal.play()
       break
     case 1:
       kick.play()
@@ -58,7 +58,7 @@ function beatThree(metro) {
   })
   switch (intensity) {
     case 0:
-      crossStick.play()
+      hiHatPedal.play()
       break
     case 1:
     case 2:
@@ -79,7 +79,7 @@ function beatFour(metro) {
   })
   switch (intensity) {
     case 0:
-      crossStick.play()
+      hiHatPedal.play()
       break
     case 1:
       kick.play()

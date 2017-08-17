@@ -2,7 +2,7 @@ import React from 'react'
 
 const beatDivs = [1, 2, 3, 4]
 const drumPics = {
-  0: ['./pics/sticks.png', './pics/sticks.png', './pics/sticks.png', './pics/sticks.png'],
+  0: ['./pics/sticks.png', './pics/hihat-pedal.png', './pics/hihat-pedal.png', './pics/hihat-pedal.png'],
   1: ['./pics/kick.png', './pics/kick.png', './pics/kick.png', './pics/kick.png'],
   2: ['./pics/kick.png', './pics/kick-snare.png', './pics/kick.png', './pics/kick-snare.png'],
   3: ['./pics/kick-hihat.png', './pics/kick-snare-hihat.png', './pics/kick-hihat.png', './pics/kick-snare-hihat.png'],
