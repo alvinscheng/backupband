@@ -70,6 +70,20 @@ class App extends React.Component {
                 <img src="./pics/BuBkeyboard.png" />
                 <Keys/>
               </div>
+              <div id="rock-out">
+                <div id="usbnumpad">
+                  <img src="./pics/usbnumpad.png" />
+                </div>
+                <div id="numpad-instructions">
+                  <p>Backup Band has the ability to work with a USB number pad.
+                    <a href="http://a.co/0o5OISP" target="_blank" rel="noopener noreferrer"> This model </a>
+                    was used during testing.</p>
+                  <p>With some <a href="http://a.co/35It0lX" target="_blank" rel="noopener noreferrer">damage-free velcro strips </a>
+                   you can affix the number pad to your guitar and control Backup Band without touching your computer!</p>
+                  <p>Enter = Start / Stop Metronome | + = Increase Tempo | - = Decrease Tempo</p>
+                  <p>0 = Intensity 0 | 1 = Intensity 1 | 4 = Intensity 2 | 7 = Intensity 3 | Num Lock = Intensity 4</p>
+                </div>
+              </div>
             </div>
             : null
         }
