@@ -115,8 +115,40 @@ hr {
   padding: 1rem;
   text-align: center;
   vertical-align: top;
+  overflow: hidden;
 }
 
 #numpad-instructions > p > a {
   text-decoration: underline;
+}
+
+#guitar-image {
+  position: relative;
+}
+
+#guitar {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 30%;
+    width: 70%;
+  }
+
+  to {
+    margin-left: 10%;
+    width: 70%;
+  }
+}
+
+#guitar-numpad {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  animation: slidein 3s alternate infinite;
 }
