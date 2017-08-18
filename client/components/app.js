@@ -2,8 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import keyboard from '../keyboard.js'
 import RenderBand from './band.js'
+import RenderHelp from './help.js'
 import Scroll from 'react-scroll'
-import Keys from './keys'
 
 class App extends React.Component {
   constructor(props) {
@@ -52,7 +52,7 @@ class App extends React.Component {
     return (
       <div>
         <div id="logo">Backup{ this.yahoo() }Band</div>
-        <div id="new-user"><a onClick={this.showKeys}>Show / Hide Keyboard</a></div>
+        <div id="new-user"><a onClick={this.showKeys}>Show / Hide Help</a></div>
         <RenderBand
           beat={this.props.beat}
           intensity={this.props.intensity}
@@ -60,17 +60,7 @@ class App extends React.Component {
         />
         {
           this.state.keys
-            ? <div>
-              <div id="text-instructions">
-                <p><u>Free Play</u></p>
-                <p>Space: Start/Stop Metronome | V / Left Arrow = Intensity Down | N / Right Arrow = Intensity Up | Up/Down Arrow = Tempo Change</p>
-                <p>F = Kick Drum | J = Snare Drum | Q = Crash | W = Hi Hat Open | E = Hi Hat Pedal | R = Cross Stick | U = Clap | I = Hi Tom | O = Mid Tom | P = Low Tom</p>
-              </div>
-              <div id="keyboard">
-                <img src="./pics/BuBkeyboard.png" />
-                <Keys/>
-              </div>
-            </div>
+            ? <RenderHelp showKeys={this.showKeys}/>
             : null
         }
       </div>
