@@ -22,7 +22,7 @@ const snare = new Howl({
 
 const hiHatPedal = new Howl({
   src: ['./sound-files/hihat_pedal.wav'],
-  volume: 0.2
+  volume: 0.4
 })
 
 const hiHatOpen = new Howl({
